@@ -1,2 +1,2 @@
 # extensions
-Alternative for core, renaming for use
+Alternative for core, renaming
