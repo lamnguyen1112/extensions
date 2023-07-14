@@ -7,19 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E07276E32A6122C8006DF498 /* ExtensionRx in Frameworks */ = {isa = PBXBuildFile; productRef = E07276E22A6122C8006DF498 /* ExtensionRx */; };
+		E07276E52A6122C8006DF498 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = E07276E42A6122C8006DF498 /* Extensions */; };
 		E0B475FF2A60DC4300B9FA74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B475FE2A60DC4300B9FA74 /* AppDelegate.swift */; };
 		E0B476012A60DC4300B9FA74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B476002A60DC4300B9FA74 /* SceneDelegate.swift */; };
 		E0B476032A60DC4300B9FA74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B476022A60DC4300B9FA74 /* ViewController.swift */; };
 		E0B476062A60DC4300B9FA74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B476042A60DC4300B9FA74 /* Main.storyboard */; };
 		E0B476082A60DC4400B9FA74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B476072A60DC4400B9FA74 /* Assets.xcassets */; };
 		E0B4760B2A60DC4400B9FA74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B476092A60DC4400B9FA74 /* LaunchScreen.storyboard */; };
-		E0B476182A60DCFE00B9FA74 /* FoundationExt in Frameworks */ = {isa = PBXBuildFile; productRef = E0B476172A60DCFE00B9FA74 /* FoundationExt */; };
-		E0B4761A2A60DCFE00B9FA74 /* RxSwiftExtPlus in Frameworks */ = {isa = PBXBuildFile; productRef = E0B476192A60DCFE00B9FA74 /* RxSwiftExtPlus */; };
-		E0B4761C2A60DCFE00B9FA74 /* UIKitExt in Frameworks */ = {isa = PBXBuildFile; productRef = E0B4761B2A60DCFE00B9FA74 /* UIKitExt */; };
-		E0B4761E2A60E0F500B9FA74 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = E0B4761D2A60E0F500B9FA74 /* Extensions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E07276E12A612167006DF498 /* extensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = extensions; path = ..; sourceTree = "<group>"; };
 		E0B475FB2A60DC4300B9FA74 /* Extension-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Extension-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B475FE2A60DC4300B9FA74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B476002A60DC4300B9FA74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +27,6 @@
 		E0B476072A60DC4400B9FA74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0B4760A2A60DC4400B9FA74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0B4760C2A60DC4400B9FA74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0B476132A60DC6200B9FA74 /* extensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = extensions; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,10 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0B4761A2A60DCFE00B9FA74 /* RxSwiftExtPlus in Frameworks */,
-				E0B476182A60DCFE00B9FA74 /* FoundationExt in Frameworks */,
-				E0B4761E2A60E0F500B9FA74 /* Extensions in Frameworks */,
-				E0B4761C2A60DCFE00B9FA74 /* UIKitExt in Frameworks */,
+				E07276E52A6122C8006DF498 /* Extensions in Frameworks */,
+				E07276E32A6122C8006DF498 /* ExtensionRx in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +77,7 @@
 		E0B476122A60DC6200B9FA74 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				E0B476132A60DC6200B9FA74 /* extensions */,
+				E07276E12A612167006DF498 /* extensions */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -110,10 +106,8 @@
 			);
 			name = "Extension-Example";
 			packageProductDependencies = (
-				E0B476172A60DCFE00B9FA74 /* FoundationExt */,
-				E0B476192A60DCFE00B9FA74 /* RxSwiftExtPlus */,
-				E0B4761B2A60DCFE00B9FA74 /* UIKitExt */,
-				E0B4761D2A60E0F500B9FA74 /* Extensions */,
+				E07276E22A6122C8006DF498 /* ExtensionRx */,
+				E07276E42A6122C8006DF498 /* Extensions */,
 			);
 			productName = "Extension-Example";
 			productReference = E0B475FB2A60DC4300B9FA74 /* Extension-Example.app */;
@@ -334,9 +328,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Extension-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -362,9 +359,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Extension-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -392,19 +392,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E0B476172A60DCFE00B9FA74 /* FoundationExt */ = {
+		E07276E22A6122C8006DF498 /* ExtensionRx */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = FoundationExt;
+			productName = ExtensionRx;
 		};
-		E0B476192A60DCFE00B9FA74 /* RxSwiftExtPlus */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RxSwiftExtPlus;
-		};
-		E0B4761B2A60DCFE00B9FA74 /* UIKitExt */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UIKitExt;
-		};
-		E0B4761D2A60E0F500B9FA74 /* Extensions */ = {
+		E07276E42A6122C8006DF498 /* Extensions */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Extensions;
 		};

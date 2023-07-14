@@ -7,7 +7,6 @@
 
 #if !os(macOS)
 import UIKit
-import FoundationExt
 
 // MARK: - Frame
 public extension UIView {
