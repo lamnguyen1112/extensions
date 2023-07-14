@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "extensions",
+    name: "Extensions",
     defaultLocalization: "en",
     platforms: [.iOS(.v12)],
     products: [
