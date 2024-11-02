@@ -1,6 +1,6 @@
 //
 //  Date+Extension.swift
-//  
+//
 //
 //  Created by Lam Nguyen on 4/24/22.
 //
@@ -32,7 +32,7 @@ public extension Date {
     }
 
     func toStringJpTimeZone(format dateFormat: String) -> String {
-        return self.toString(format: dateFormat, timeZone: TimeZone.jp)
+        return toString(format: dateFormat, timeZone: TimeZone.jp)
     }
 }
 
@@ -42,38 +42,38 @@ public extension Date {
         self = date
         guard minuteInterval > 1 else { return }
         let minuteInterval = Int(date.minute / minuteInterval) * minuteInterval
-        self.minute = minuteInterval
+        minute = minuteInterval
     }
 
     func addingMinutes(_ mins: Int) -> Date {
-        return self.addingTimeInterval(TimeInterval(mins * 60))
+        return addingTimeInterval(TimeInterval(mins * 60))
     }
 
     func addingHours(_ hours: Int) -> Date {
-        return self.addingTimeInterval(TimeInterval(hours * 60 * 60))
+        return addingTimeInterval(TimeInterval(hours * 60 * 60))
     }
 
     func addingDays(_ days: Int) -> Date {
-        return self.addingTimeInterval(TimeInterval(days * 24 * 60 * 60))
+        return addingTimeInterval(TimeInterval(days * 24 * 60 * 60))
     }
 
     mutating func addMinutes(_ mins: Int) {
-        self = self.addingTimeInterval(TimeInterval(mins * 60))
+        self = addingTimeInterval(TimeInterval(mins * 60))
     }
 
     mutating func addHours(_ hours: Int) {
-        self = self.addingTimeInterval(TimeInterval(hours * 60 * 60))
+        self = addingTimeInterval(TimeInterval(hours * 60 * 60))
     }
 
     mutating func addDays(_ days: Int) {
-        self = self.addingTimeInterval(TimeInterval(days * 24 * 60 * 60))
+        self = addingTimeInterval(TimeInterval(days * 24 * 60 * 60))
     }
 
     func daysIgnoreTimeSince(_ date: Date) -> Int {
         var calComponents = Calendar.current.dateComponents(in: TimeZone.current, from: date)
-        calComponents.day = self.day
-        calComponents.month = self.month
-        calComponents.year = self.year
+        calComponents.day = day
+        calComponents.month = month
+        calComponents.year = year
         let calDate = Calendar.current.date(from: calComponents) ?? self
         return Calendar.current.dateComponents([Calendar.Component.day], from: date, to: calDate).day ?? 0
     }
@@ -81,22 +81,22 @@ public extension Date {
 
 public extension Date {
     var isToday: Bool {
-        return self.isEqualDateIgnoreTime(toDate: Date())
+        return isEqualDateIgnoreTime(toDate: Date())
     }
-    
+
     func isEqualDateIgnoreTime(toDate: Date?) -> Bool {
         if let dateCompare = toDate {
-            return self.day == dateCompare.day && self.month == dateCompare.month && self.year == dateCompare.year
+            return day == dateCompare.day && month == dateCompare.month && year == dateCompare.year
         }
         return false
     }
-    
+
     var isFirstDayOfMonth: Bool {
         return Calendar.current.dateComponents(Set<Calendar.Component>([.day]), from: self).day == 1
     }
 
     var isLastDayOfMonth: Bool {
-        return self.addingTimeInterval(24 * 60 * 60).isFirstDayOfMonth
+        return addingTimeInterval(24 * 60 * 60).isFirstDayOfMonth
     }
 
     var isFirstMonthOfYear: Bool {

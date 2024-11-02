@@ -9,8 +9,8 @@ import UIKit
 
 public extension UIButton {
     func setTitleColor(_ color: UIColor?, for states: [UIControl.State] = [.normal, .highlighted, .disabled]) {
-        states.forEach { state in
-            self.setTitleColor(color, for: state)
+        for state in states {
+            setTitleColor(color, for: state)
         }
     }
 }

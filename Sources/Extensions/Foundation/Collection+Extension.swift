@@ -1,6 +1,6 @@
 //
 //  Collection+Extension.swift
-//  
+//
 //
 //  Created by Lazyman on 9/1/22.
 //
@@ -26,14 +26,14 @@ public extension Array where Element: Equatable {
 
     @discardableResult
     mutating func removeFirstSafe() -> Element? {
-        guard self.count > 0 else { return nil }
-        return self.removeFirst()
+        guard count > 0 else { return nil }
+        return removeFirst()
     }
 
     @discardableResult
     mutating func removeLastSafe() -> Element? {
-        guard self.count > 0 else { return nil }
-        return self.removeLast()
+        guard count > 0 else { return nil }
+        return removeLast()
     }
 }
 

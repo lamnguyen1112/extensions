@@ -17,3 +17,7 @@ Test pod in project
 add line to pod file to get specs pod 
 
 > source 'https://github.com/lamnguyen1112/specs.git'
+
+using swiftlint plugin
+https://swiftpackageindex.com/GayleDunham/SwiftLintPlugin
+

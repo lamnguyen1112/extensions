@@ -1,21 +1,21 @@
 import Foundation
 
 struct Atomic<Value> {
-  private let queue = DispatchQueue(label: "atomic")
+    private let queue = DispatchQueue(label: "atomic")
 
-  private var value: Value
-  init(wrappedValue: Value) {
-    self.value = wrappedValue
-  }
+    private var value: Value
+    init(wrappedValue: Value) {
+        value = wrappedValue
+    }
 
-  var wrappedValue: Value {
-    get {
-      return queue.sync { value }
+    var wrappedValue: Value {
+        get {
+            return queue.sync { value }
+        }
+        set {
+            queue.sync { value = newValue }
+        }
     }
-    set {
-      queue.sync { value = newValue }
-    }
-  }
 }
 
 // References

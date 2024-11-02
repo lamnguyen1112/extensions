@@ -21,7 +21,9 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift.git", branch: "main"),
         .package(url: "https://github.com/RxSwiftCommunity/Action.git", branch: "master"),
-        .package(url: "https://github.com/RxSwiftCommunity/RxSwiftExt.git", branch: "main")
+        .package(url: "https://github.com/RxSwiftCommunity/RxSwiftExt.git", branch: "main"),
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", from: "0.57.0"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.54.6")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.

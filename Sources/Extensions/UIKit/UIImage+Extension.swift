@@ -9,8 +9,8 @@ import UIKit
 
 public extension UIImage {
     func tint(with color: UIColor) -> UIImage {
-        var image = self.withRenderingMode(.alwaysTemplate)
-        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
+        var image = withRenderingMode(.alwaysTemplate)
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
         color.set()
 
         image.draw(in: CGRect(origin: .zero, size: image.size))
@@ -18,19 +18,19 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         return image
     }
-    
+
     func resize(toSize size: CGSize, scale: CGFloat) -> UIImage? {
         let imgRect = CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: size)
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        self.draw(in: imgRect)
+        draw(in: imgRect)
         let resizedImg = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
         return resizedImg
     }
-    
+
     func resizeImage(targetSize: CGSize) -> UIImage? {
-        let widthRatio  = targetSize.width  / size.width
+        let widthRatio = targetSize.width / size.width
         let heightRatio = targetSize.height / size.height
 
         // Figure out what our orientation is, and use that to form the rectangle
@@ -52,7 +52,7 @@ public extension UIImage {
 
         return newImage
     }
-    
+
     func rotate(radians: CGFloat) -> UIImage { // radians = .pi (180 degress)
         let rotatedSize = CGRect(origin: .zero, size: size)
             .applying(CGAffineTransform(rotationAngle: CGFloat(radians)))
@@ -67,21 +67,22 @@ public extension UIImage {
                             width: size.width, height: size.height))
             let rotatedImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
-            
+
             return rotatedImage ?? self
         }
         return self
     }
-    
+
     func withInsets(_ insets: UIEdgeInsets) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(
             CGSize(width: size.width + insets.left + insets.right,
                    height: size.height + insets.top + insets.bottom),
             false,
-            self.scale)
+            scale
+        )
 
         let origin = CGPoint(x: insets.left, y: insets.top)
-        self.draw(at: origin)
+        draw(at: origin)
         let imageWithInsets = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
@@ -123,12 +124,12 @@ extension UIImage {
         overlayImageView.translatesAutoresizingMaskIntoConstraints = false
         overlayImageView.contentMode = .scaleAspectFit
         superView.addSubview(overlayImageView)
-        
+
         let centerXConst = NSLayoutConstraint(item: overlayImageView, attribute: .centerX, relatedBy: .equal, toItem: superView, attribute: .centerX, multiplier: 1, constant: 0)
         let width = NSLayoutConstraint(item: overlayImageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: width)
         let height = NSLayoutConstraint(item: overlayImageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: height)
         let centerYConst = NSLayoutConstraint(item: overlayImageView, attribute: .centerY, relatedBy: .equal, toItem: superView, attribute: .centerY, multiplier: 1, constant: 0)
-        
+
         NSLayoutConstraint.activate([width, height, centerXConst, centerYConst])
     }
 }

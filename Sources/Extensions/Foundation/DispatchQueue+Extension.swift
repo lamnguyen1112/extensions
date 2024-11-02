@@ -1,6 +1,6 @@
 //
 //  DispatchQueue+Extension.swift
-//  
+//
 //
 //  Created by Lam Nguyen on 4/24/22.
 //
@@ -8,7 +8,7 @@
 import Foundation
 
 public extension DispatchQueue {
-    static var background: DispatchQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
+    static var background: DispatchQueue = .global(qos: DispatchQoS.QoSClass.background)
 
     @available(*, deprecated, message: "using runInMain")
     class func mainAsync(execute work: @escaping @convention(block) () -> Swift.Void) {

@@ -1,6 +1,6 @@
 //
 //  Numberic+Extension.swift
-//  
+//
 //
 //  Created by Lazyman on 8/27/22.
 //
@@ -23,7 +23,8 @@ public extension SignedNumeric where Self: LosslessStringConvertible {
                   decimalSeparator: String? = nil,
                   minFractionDigits: Int? = nil,
                   maxFractionDigits: Int? = nil,
-                  locale: Locale? = nil) -> String {
+                  locale: Locale? = nil) -> String
+    {
         let format = NumberFormatter()
         format.numberStyle = style
         if let gSeparator = groupSeparator {
@@ -34,17 +35,18 @@ public extension SignedNumeric where Self: LosslessStringConvertible {
         if let min = minFractionDigits { format.minimumFractionDigits = min }
         if let max = maxFractionDigits { format.maximumFractionDigits = max }
         if let locale = locale { format.locale = locale }
-        
+
         return format.string(for: self) ?? String(self)
     }
 }
 
 public extension BinaryFloatingPoint {
     var abs: Self { Swift.abs(self) }
-    
+
     func integerValue<T: SignedNumeric>() -> T where T: FixedWidthInteger {
         return T(self)
     }
+
     func toValue<T: BinaryFloatingPoint>() -> T {
         return T(self)
     }
@@ -56,7 +58,8 @@ public extension BinaryFloatingPoint where Self: LosslessStringConvertible {
                   decimalSeparator: String? = nil,
                   minFractionDigits: Int? = nil,
                   maxFractionDigits: Int? = nil,
-                  locale: Locale? = nil) -> String {
+                  locale: Locale? = nil) -> String
+    {
         let format = NumberFormatter()
         format.numberStyle = style
         if let gSeparator = groupSeparator {
@@ -67,7 +70,7 @@ public extension BinaryFloatingPoint where Self: LosslessStringConvertible {
         if let min = minFractionDigits { format.minimumFractionDigits = min }
         if let max = maxFractionDigits { format.maximumFractionDigits = max }
         if let locale = locale { format.locale = locale }
-        
+
         return format.string(for: self) ?? String(self)
     }
 }
